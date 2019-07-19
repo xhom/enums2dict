@@ -3,21 +3,21 @@
 
 使用步骤：
 # 1.引入
-```
+```java
 import com.visy.core.*;
 import com.visy.annotations.*;
 import com.visy.interfaces.*;
 ```
 # 2.在同项目中创建自己的存放枚举类的包：例如<kbd>com.visy.enums</kbd>
 ## 2-1.你的枚举类需要有<kbd>三个固定字段</kbd>：
-```
+```java
     private String code;
     private String name;
     private String remark;
 ```
 ## 2-2.你的枚举类需要实现接口：<kbd>com.visy.interfaces.EnumInterface</kbd>
 如下：
-```
+```java
     public String getCode() {
         return code;
     }
@@ -40,14 +40,14 @@ import com.visy.interfaces.*;
     }
 ```
 ## 2-3.添加你自己的枚举值：
-```
+```java
     CREATE("100","新建"),
     PALLET_FINISH("260","码盘完成");
 ```
 ## 2-4.给枚举类添加注解：<kbd>@EnumDesc("入库单状态")</kbd>以描述枚举的类型
 
 # 3.根据包名获取下面所有枚举类的数据：
-```
+```java
     List<DictEntity> dictList = EnumsToDict.getDictsOfPackage("com.visy.enums");
     //DictEntity是一个封装字典数据的对象
     //你可以把这些数据放入数据库以实现同步
