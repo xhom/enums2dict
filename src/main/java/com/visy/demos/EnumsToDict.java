@@ -3,7 +3,6 @@ package com.visy.demos;
 import com.visy.annotations.EnumDesc;
 
 import java.io.File;
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -52,8 +51,8 @@ public class EnumsToDict {
     }
 
     //获取指定枚举类的全部数据
-    private static List<DictEntry>  getDataByClass(String classPath){
-        List<DictEntry> dictList = new ArrayList<DictEntry>();
+    private static List<DictEntity>  getDataByClass(String classPath){
+        List<DictEntity> dictList = new ArrayList<DictEntity>();
         try{
             Class<?> clazz = Class.forName(classPath);
             Object[] values = clazz.getEnumConstants();
@@ -71,7 +70,7 @@ public class EnumsToDict {
                 String code = (String)getCodeMethod.invoke(value);
                 String name = (String)getNameMethod.invoke(value);
                 String remark = (String)getRemarkMethod.invoke(value);
-                DictEntry dict = new DictEntry(typeCode,typeName,code,name,remark);
+                DictEntity dict = new DictEntity(typeCode,typeName,code,name,remark);
                 dictList.add(dict);
             }
         }catch (Exception e){
@@ -82,9 +81,9 @@ public class EnumsToDict {
     }
 
     //获取指定包下所有枚举配置数据
-    public static List<DictEntry> getDictsOfPackage(String pkgPath) {
+    public static List<DictEntity> getDictsOfPackage(String pkgPath) {
         List<String> list = getClassesByPackage(pkgPath);
-        List<DictEntry> dictList = new ArrayList<DictEntry>();
+        List<DictEntity> dictList = new ArrayList<DictEntity>();
         for(String path: list){
             dictList.addAll(getDataByClass(path));
         }

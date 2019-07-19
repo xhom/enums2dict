@@ -1,26 +1,26 @@
 package com.visy.demos;
 
-public class DictEntry{
+public class DictEntity {
     private String typeCode;
     private String typeName;
     private String code;
     private String name;
     private String remark;
 
-    DictEntry(){}
+    DictEntity(){}
 
-    DictEntry(String code,String name,String remark){
+    DictEntity(String code, String name, String remark){
         this.code = code;
         this.name = name;
         this.remark = remark;
     }
-    DictEntry(String typeCode,String code,String name,String remark){
+    DictEntity(String typeCode, String code, String name, String remark){
         this.typeCode = typeCode;
         this.code = code;
         this.name = name;
         this.remark = remark;
     }
-    DictEntry(String typeCode,String typeName,String code,String name,String remark){
+    DictEntity(String typeCode, String typeName, String code, String name, String remark){
         this.typeCode = typeCode;
         this.typeName = typeName;
         this.code = code;
