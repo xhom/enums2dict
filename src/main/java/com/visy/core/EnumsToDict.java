@@ -60,16 +60,16 @@ public class EnumsToDict {
             EnumDesc enumDesc =  clazz.getAnnotation(EnumDesc.class);
             String typeName = enumDesc!=null ? enumDesc.value() : null;
 
-            Method getCodeMethod = clazz.getDeclaredMethod("getCode");
-            Method getNameMethod = clazz.getDeclaredMethod("getName");
-            Method getRemarkMethod = clazz.getDeclaredMethod("getRemark");
-            Method.setAccessible(new Method[]{getCodeMethod,getNameMethod,getRemarkMethod},true);
+            Method m1 = clazz.getDeclaredMethod("getCode");
+            Method m2 = clazz.getDeclaredMethod("getName");
+            Method m3 = clazz.getDeclaredMethod("getRemark");
+            Method.setAccessible(new Method[]{m1,m2,m3},true);
 
             for(Object value: values){
                 String typeCode = value.getClass().getSimpleName();
-                String code = (String)getCodeMethod.invoke(value);
-                String name = (String)getNameMethod.invoke(value);
-                String remark = (String)getRemarkMethod.invoke(value);
+                String code = (String)m1.invoke(value);
+                String name = (String)m2.invoke(value);
+                String remark = (String)m3.invoke(value);
                 DictEntity dict = new DictEntity(typeCode,typeName,code,name,remark);
                 dictList.add(dict);
             }
