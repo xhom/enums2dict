@@ -9,11 +9,11 @@ import com.visy.annotations.*;
 import com.visy.interfaces.*;
 ```
 # 2.在同项目中创建自己的存放枚举类的包：例如<kbd>com.visy.enums</kbd>
-## 2-1.你的枚举类需要有<kbd>三个固定字段</kbd>：
+## 2-1.你的枚举类需要有三个固定字段：
 ```java
-    private String code;
-    private String name;
-    private String remark;
+    private String code;//字典代码
+    private String name;//字典名称
+    private String remark;//备注
 ```
 ## 2-2.你的枚举类需要实现接口：<kbd>com.visy.interfaces.EnumInterface</kbd>
 如下：
@@ -30,6 +30,7 @@ import com.visy.interfaces.*;
         return remark;
     }
 
+    //通过字典代码获取名称
     public String getNameByCode(Integer code){
         for(InbStatus status : InbStatus.values()){
             if(code!=null && code.equals(status.getCode())){
@@ -54,7 +55,7 @@ import com.visy.interfaces.*;
     for(DictEntity dict: dictList){
         System.out.println(dict.toString());
     }
-    //打印结果
+    /* 打印结果：
     typeCode=InbStatus,typeName=入库单状态,code=100,name=新建,remark=null
     typeCode=InbStatus,typeName=入库单状态,code=260,name=码盘完成,remark=null
     typeCode=InbStatus,typeName=入库单状态,code=300,name=部分完成,remark=null
@@ -63,6 +64,7 @@ import com.visy.interfaces.*;
     typeCode=InbStatus,typeName=入库单状态,code=999,name=取消,remark=null
     typeCode=OubStatus,typeName=出库单订单状态,code=300,name=全部分配,remark=null
     typeCode=OubStatus,typeName=出库单订单状态,code=320,name=部分拣货,remark=null
+    */
     //typeCode取值于枚举类的类名
     //typeName取值于@EnumDesc注解
     //code和name取值于枚举内部的常量
