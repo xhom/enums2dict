@@ -35,7 +35,7 @@ public enum OubStatus implements EnumInterface {
         return remark;
     }
 
-    public String getNameByCode(Integer code){
+    public String getNameByCode(String code){
         for(InbStatus status : InbStatus.values()){
             if(code!=null && code.equals(status.getCode())){
                 return status.getName();

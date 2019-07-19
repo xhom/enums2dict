@@ -11,5 +11,5 @@ public interface EnumInterface {
     /**
      * 通过代码获取名称
      */
-    String getNameByCode(Integer code);
+    String getNameByCode(String code);
 }
