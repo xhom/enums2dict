@@ -1,4 +1,4 @@
-package com.visy.core;
+package com.visy.enums2dict.core;
 
 public class DictEntity {
     private String typeCode;

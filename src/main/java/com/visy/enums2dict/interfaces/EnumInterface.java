@@ -1,4 +1,4 @@
-package com.visy.interfaces;
+package com.visy.enums2dict.interfaces;
 
 public interface EnumInterface {
 

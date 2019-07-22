@@ -1,6 +1,6 @@
-package com.visy.core;
+package com.visy.enums2dict.core;
 
-import com.visy.annotations.EnumDesc;
+import com.visy.enums2dict.annotations.EnumDesc;
 
 import java.io.File;
 import java.lang.reflect.Method;

@@ -15,7 +15,7 @@ import com.visy.interfaces.*;
     private String name;//字典名称
     private String remark;//备注
 ```
-## 2-2.你的枚举类需要实现接口：<kbd>com.visy.interfaces.EnumInterface</kbd>
+## 2-2.你的枚举类需要实现接口：<kbd>EnumInterface</kbd>
 如下：
 ```java
     public String getCode() {

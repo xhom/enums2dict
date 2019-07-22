@@ -1,4 +1,4 @@
-package com.visy.annotations;
+package com.visy.enums2dict.annotations;
 
 import java.lang.annotation.*;
 

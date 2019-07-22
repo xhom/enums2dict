@@ -1,27 +1,23 @@
-package com.visy.enums;
+package com.visy.enums2dict.enums;
 
-import com.visy.annotations.EnumDesc;
-import com.visy.interfaces.EnumInterface;
+import com.visy.enums2dict.annotations.EnumDesc;
+import com.visy.enums2dict.interfaces.EnumInterface;
 
-@EnumDesc("入库单状态")
-public enum InbStatus implements EnumInterface {
-    CREATE("100","新建"),
-    PALLET_FINISH("260","码盘完成"),
-    PART_FINISH("300", "部分完成"),
-    FULL_FINISH("310","全部完成"),
-    CLOSE("950", "关闭"),
-    CANCEL("999", "取消");
+@EnumDesc("出库单订单状态")
+public enum OubStatus implements EnumInterface {
+    ALL_ALLOCATE("300","全部分配"),
+    PART_JH("320","部分拣货");
 
     private String code;
     private String name;
     private String remark;
 
-    InbStatus(String code, String name){
+    OubStatus(String code, String name){
         this.code = code;
         this.name = name;
     }
 
-    InbStatus(String code, String name, String remark){
+    OubStatus(String code, String name, String remark){
         this.code = code;
         this.name = name;
         this.remark = remark;
