@@ -31,7 +31,7 @@ import com.visy.interfaces.*;
     }
 
     //通过字典代码获取名称
-    public String getNameByCode(Integer code){
+    public String getNameByCode(String code){
         for(InbStatus status : InbStatus.values()){
             if(code!=null && code.equals(status.getCode())){
                 return status.getName();
